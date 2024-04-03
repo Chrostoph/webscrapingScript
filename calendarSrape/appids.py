@@ -1,19 +1,7 @@
 import csv
 import glob
 import datetime
-
-import requests
-import urllib.request
-import time
 from bs4 import BeautifulSoup
-from itertools import zip_longest
-import pandas as pd
-import re
-from re import sub
-import html
-from decimal import Decimal
-from pymongo import MongoClient
-
 
 export_file = open('export_data.csv', 'w', newline='')
 writer = csv.writer(export_file)
@@ -75,10 +63,3 @@ for f in files:
         headers = (appids[-1].text, mapped[-1].text, env[-1], status[-1])
         writer.writerow(headers)
         export_file.close()
-
-    # # print(appids)
-    # for t in appids:
-    #     print(t.text)
-    # for m in mapped:
-    #     print(m.text)
-    # print(status)
